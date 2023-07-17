@@ -1,9 +1,9 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-24">
-      <h1>Hello, Useless Art</h1>
+    <main className="min-h-screen p-10">
+      <h1 className="text-xl text-center">
+        Art does not have any value. But you can make in valuable.
+      </h1>
     </main>
   );
 }
