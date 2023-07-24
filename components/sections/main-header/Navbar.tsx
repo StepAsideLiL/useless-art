@@ -10,16 +10,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
 import LoginForm from "@/components/sections/main-header/LoginForm";
@@ -38,7 +28,7 @@ const Navbar = () => {
         <div className="flex items-center gap-5">
           <NavMenus />
 
-          <Dialog>
+          {/* <Dialog>
             <DialogTrigger>
               <BsPerson className="text-xl" />
             </DialogTrigger>
@@ -67,7 +57,11 @@ const Navbar = () => {
                 </DialogDescription>
               </DialogHeader>
             </DialogContent>
-          </Dialog>
+          </Dialog> */}
+
+          <Button asChild>
+            <Link href="/login">Login</Link>
+          </Button>
         </div>
       </div>
     </header>

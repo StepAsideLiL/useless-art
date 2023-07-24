@@ -1,13 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  webpack: (config, { defaultLoaders }) => {
-    config.module.rules.push({
-      test: /\.+(js|jsx|ts|tsx)$/,
-      include: /node_modules[\\/]iconview/,
-      use: defaultLoaders.babel,
-    });
-    return config;
-  },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;

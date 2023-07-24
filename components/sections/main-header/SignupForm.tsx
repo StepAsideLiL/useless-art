@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
 const formSchema = z.object({
   username: z.string().min(4).max(50),
@@ -41,6 +42,8 @@ const SignupForm = () => {
 
   function loginFormSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+
+    axios.post("/api/signup", values);
   }
 
   return (
