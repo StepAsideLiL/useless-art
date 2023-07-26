@@ -22,9 +22,10 @@ import { Button } from "@/components/ui/button";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { signIn, useSession } from "next-auth/react";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 type LoginFormProps = {
   className?: string;
@@ -36,7 +37,15 @@ const formSchema = z.object({
 });
 
 const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
+  const session = useSession();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (session?.status === "authenticated") {
+      router.push("/user");
+    }
+  }, [session?.status, router]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -61,6 +70,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ className }) => {
 
         if (callback?.ok && !callback?.error) {
           toast.success("Logged in");
+          router.push("/user");
         }
       })
       .finally(() => setIsLoading(false));

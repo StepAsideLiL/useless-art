@@ -25,6 +25,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type SignupFormProps = {
   className?: string;
@@ -37,6 +38,7 @@ const formSchema = z.object({
 });
 
 const SignupForm: React.FC<SignupFormProps> = ({ className }) => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -54,7 +56,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ className }) => {
 
     axios
       .post("/api/signup", values)
-      .then()
+      .then(() => router.push("/login"))
       .catch(() => toast.error("Something went wrong! Try again."))
       .finally(() => setIsLoading(false));
   }
