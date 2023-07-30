@@ -1,9 +1,11 @@
-export default function Home() {
+import HeroSection from "./components/HeroSection";
+
+const HomePage = () => {
   return (
-    <main className="min-h-screen p-10">
-      <h1 className="text-xl text-center">
-        Art does not have any value. But you can make in valuable.
-      </h1>
+    <main className="min-h-screen py-10">
+      <HeroSection />
     </main>
   );
-}
+};
+
+export default HomePage;

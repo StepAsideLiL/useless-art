@@ -7,12 +7,12 @@ const NavMenus = () => {
       link: "/",
     },
     {
-      name: "Art",
-      link: "/art",
+      name: "Arts",
+      link: "/arts",
     },
     {
-      name: "About",
-      link: "/about",
+      name: "Blogs",
+      link: "/blogs",
     },
   ];
 
