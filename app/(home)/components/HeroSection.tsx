@@ -37,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
   console.log(Image1);
 
   return (
-    <div className={`${className} space-y-10`}>
+    <section className={`${className} space-y-10`}>
       <div className={anton.className}>
         <h3 className="text-6xl font-bold text-center">
           We Create Value In Art
@@ -76,7 +76,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
