@@ -27,7 +27,7 @@ const Blog3BuyArtAndProvideValue: React.FC<Blog3BuyArtAndProvideValueProps> = ({
         </p>
 
         <Button asChild>
-          <Link href="buy-art-and-provide-value">Read More</Link>
+          <Link href="/buy-art-and-provide-value">Read More</Link>
         </Button>
       </div>
 

@@ -36,7 +36,7 @@ const Blog2ArtIsUselessAndValueless: React.FC<
 
         <div className="text-right">
           <Button asChild>
-            <Link href="art-is-useless-and-valueless">Read More</Link>
+            <Link href="/art-is-useless-and-valueless">Read More</Link>
           </Button>
         </div>
       </div>

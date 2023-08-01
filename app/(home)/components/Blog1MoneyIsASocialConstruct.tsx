@@ -30,7 +30,7 @@ const Blog1MoneyIsASocialConstruct: React.FC<
         </p>
 
         <Button asChild>
-          <Link href="money-is-a-social-construct">Read More</Link>
+          <Link href="/money-is-a-social-construct">Read More</Link>
         </Button>
       </div>
 
